@@ -1,0 +1,1 @@
+docker build -t jvoliveira/hello-world:0.1 .

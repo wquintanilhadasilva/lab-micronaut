@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: hello-world
+#  server:
+#    port: 8086
+
+greeting:
+  message: Hello

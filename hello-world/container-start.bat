@@ -1,0 +1,1 @@
+docker run -d -p 8090:8080 --name micronaut helloworld/hello-world:0.1
