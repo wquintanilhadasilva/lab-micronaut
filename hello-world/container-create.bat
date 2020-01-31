@@ -1,1 +1,1 @@
-docker build -t jvoliveira/hello-world:0.1 .
+docker build -t helloworld/hello-world:0.1 .
