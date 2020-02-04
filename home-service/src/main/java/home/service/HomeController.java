@@ -1,4 +1,4 @@
-package example.micronaut;
+package home.service;
 
 import java.security.Principal;
 
@@ -9,11 +9,10 @@ import io.micronaut.http.annotation.Produces;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.rules.SecurityRule;
 
-//@Secured(SecurityRule.IS_AUTHENTICATED)
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/home")
 public class HomeController {
 
-	@Secured(SecurityRule.IS_AUTHENTICATED)
 	@Get("/")
     @Produces(MediaType.TEXT_PLAIN)
     public String index()
@@ -21,7 +20,6 @@ public class HomeController {
         return "HomeController.index()";
     }
     
-	@Secured(SecurityRule.IS_AUTHENTICATED)
     @Get("/username")
     @Produces(MediaType.TEXT_PLAIN)
     public String username(Principal principal)

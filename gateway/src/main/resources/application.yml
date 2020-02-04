@@ -24,9 +24,13 @@ micronaut:
           prefix: "Bearer "
       propagation:
         enabled: true
-        service-id-regex: "userecho"
+        service-id-regex: "userecho|homeservice"
   http:
     services:
       userecho:
         urls:
           - "http://localhost:8081"
+      homeservice:
+        urls:
+          - "http://localhost:8082"
+
