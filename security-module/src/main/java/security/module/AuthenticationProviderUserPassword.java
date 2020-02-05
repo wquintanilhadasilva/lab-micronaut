@@ -1,4 +1,4 @@
-package example.micronaut;
+package security.module;
 
 import java.util.Collections;
 

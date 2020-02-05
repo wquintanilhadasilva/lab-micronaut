@@ -44,5 +44,20 @@ public class UserControllerTest {
 
         assertEquals("sherlock", username);
     }
+    
+    
+    @Test
+    public void testFowardLogin() { 
+    	
+    	UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("sherlock", "password");
+        HttpRequest request = HttpRequest.POST("/security/login", credentials);
+
+        BearerAccessRefreshToken bearerAccessRefreshToken = client.toBlocking().retrieve(request, BearerAccessRefreshToken.class);
+
+        String username = client.toBlocking().retrieve(HttpRequest.GET("/user")
+                .header("Authorization", "Bearer " + bearerAccessRefreshToken.getAccessToken()), String.class);
+
+        assertEquals("sherlock", username);
+    }
 
 }

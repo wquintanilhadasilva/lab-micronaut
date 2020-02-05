@@ -5,11 +5,11 @@ micronaut:
     port: 8080
   security:
     enabled: true
-    endpoints:
-      login:
-        enabled: true
-      oauth:
-        enabled: true
+#    endpoints:
+#      login:
+#        enabled: true
+#      oauth:
+#        enabled: true
     token:
       jwt:
         enabled: true
@@ -24,7 +24,7 @@ micronaut:
           prefix: "Bearer "
       propagation:
         enabled: true
-        service-id-regex: "userecho|homeservice"
+        service-id-regex: "userecho|homeservice|security"
   http:
     services:
       userecho:
@@ -33,4 +33,7 @@ micronaut:
       homeservice:
         urls:
           - "http://localhost:8082"
+      security:
+        urls:
+          - "http://localhost:8083"
 

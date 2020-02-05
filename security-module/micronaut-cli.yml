@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: security.module
+---
+testFramework: junit
+sourceLanguage: java
