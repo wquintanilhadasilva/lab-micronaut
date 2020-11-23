@@ -18,6 +18,10 @@ public class DateLab {
 		Instant ld = startDate.atStartOfDay(UTC).toInstant();
 		System.out.println(ld);
 		
+		build(startDate, 5);
+		
+		buildEndDay(ld);
+		
 		System.out.println("Next Day");
 //		build(startDate, 1);
 		Instant i = buildNextDay(ld);
@@ -53,6 +57,16 @@ public class DateLab {
 		System.out.println("Start:" + ld);
 		ld = startDate.plusDays(days + 6).atTime(LocalTime.MAX).toInstant(ZoneOffset.UTC);
 		System.out.println("End:" + ld);
+		System.out.println("-----------");
+	}
+	
+	private static void buildEndDay(Instant date) {
+		LocalDateTime ldt = LocalDateTime.ofInstant(date, UTC);
+		ldt = ldt.with(LocalTime.MAX);
+		System.out.println("Start:" + date);
+		System.out.println("End:" + ldt);
+		System.out.println("-----------");
+		
 	}
 	
 	private static Instant buildNextDay(Instant instant) {
